@@ -3,7 +3,7 @@ import TAGS from '../cacheTags'
 
 const extendedApi = api.injectEndpoints({
     endpoints: (build) => ({
-        getGanttEvents: build.query<any>({
+        getGanttEvents: build.query({
             query: (params) => ({
                 url: `events/`,
                 params,

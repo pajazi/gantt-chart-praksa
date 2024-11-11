@@ -21,8 +21,15 @@
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "moduleResolution": "node"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+, "src/pages/_app.js", "src/pages/_document.js", "src/pages/index.js", "src/redux/slices/ganttSlice.js", "src/redux/apiSlice.js", "src/redux/baseQuery.js", "src/redux/cacheTags.js", "src/redux/store.js", "src/routes/paths.js"  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
