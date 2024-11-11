@@ -1,0 +1,601 @@
+{
+  "events": [
+    {
+      "id": "51",
+      "jobId": "24073",
+      "name": "KRT event",
+      "dateBuildStart": null,
+      "dateBuildEnd": "2023-08-21",
+      "dateStart": "2023-08-22",
+      "dateEnd": "2023-08-24",
+      "status": "Production",
+      "partner": {
+        "id": "1b010ea4-eb8e-4258-a7ec-38b9e233326f",
+        "firstname": "Alex",
+        "lastname": "Cautaerts"
+      }
+    },
+    {
+      "id": "56",
+      "jobId": "23211",
+      "name": "Townhall James Quincey",
+      "dateBuildStart": "2023-06-28",
+      "dateBuildEnd": "2023-06-28",
+      "dateStart": "2023-06-29",
+      "dateEnd": "2023-06-30",
+      "status": "Production",
+      "partner": {
+        "id": "1b010ea4-eb8e-4258-a7ec-38b9e233326f",
+        "firstname": "Alex",
+        "lastname": "Cautaerts"
+      }
+    },
+    {
+      "id": "58",
+      "jobId": "24074",
+      "name": "Plaatsing wagen Knokke ",
+      "dateBuildStart": "2023-07-31",
+      "dateBuildEnd": "2023-07-31",
+      "dateStart": "2023-08-01",
+      "dateEnd": "2023-08-06",
+      "status": "Production",
+      "partner": {
+        "id": "06dfac88-6bab-4dcc-8bf8-68bd74e22b74",
+        "firstname": "Stefan",
+        "lastname": "Ponnet"
+      }
+    },
+    {
+      "id": "99",
+      "jobId": "24049",
+      "name": "Lancering nieuwe Espace",
+      "dateBuildStart": "2023-12-19",
+      "dateBuildEnd": "2023-12-19",
+      "dateStart": "2023-12-20",
+      "dateEnd": "2023-12-22",
+      "status": "Production",
+      "partner": {
+        "id": "06dfac88-6bab-4dcc-8bf8-68bd74e22b74",
+        "firstname": "Stefan",
+        "lastname": "Ponnet"
+      }
+    },
+    {
+      "id": "170",
+      "jobId": "24017",
+      "name": "LP Event 2023",
+      "dateBuildStart": "2023-10-18",
+      "dateBuildEnd": "2023-10-18",
+      "dateStart": "2023-10-16",
+      "dateEnd": "2023-10-21",
+      "status": "Production",
+      "partner": {
+        "id": "1b010ea4-eb8e-4258-a7ec-38b9e233326f",
+        "firstname": "Alex",
+        "lastname": "Cautaerts"
+      }
+    },
+    {
+      "id": "178",
+      "jobId": "24016",
+      "name": "Onderneming van het Jaar",
+      "dateBuildStart": "2023-12-03",
+      "dateBuildEnd": "2023-12-03",
+      "dateStart": "2023-12-04",
+      "dateEnd": "2023-12-06",
+      "status": "Production",
+      "partner": {
+        "id": "1b010ea4-eb8e-4258-a7ec-38b9e233326f",
+        "firstname": "Alex",
+        "lastname": "Cautaerts"
+      }
+    },
+    {
+      "id": "201",
+      "jobId": "24004/2",
+      "name": "YTIA 2023 - 2",
+      "dateBuildStart": "2023-10-25",
+      "dateBuildEnd": "2023-10-25",
+      "dateStart": "2023-10-23",
+      "dateEnd": "2023-10-28",
+      "status": "Production",
+      "partner": {
+        "id": "8fa04172-100d-4fe2-a5c8-bf842cdf38be",
+        "firstname": "Nathalie",
+        "lastname": "Schoonheyt"
+      }
+    },
+    {
+      "id": "207",
+      "jobId": "24004/3",
+      "name": "YTIA 2023 - 3",
+      "dateBuildStart": "2023-11-05",
+      "dateBuildEnd": "2023-11-05",
+      "dateStart": "2023-11-06",
+      "dateEnd": "2023-11-16",
+      "status": "Production",
+      "partner": {
+        "id": "8fa04172-100d-4fe2-a5c8-bf842cdf38be",
+        "firstname": "Nathalie",
+        "lastname": "Schoonheyt"
+      }
+    },
+    {
+      "id": "109",
+      "jobId": "24041",
+      "name": "Kenshiki Forum",
+      "dateBuildStart": null,
+      "dateBuildEnd": null,
+      "dateStart": "2023-11-29",
+      "dateEnd": "2023-11-30",
+      "status": "Offer",
+      "partner": {
+        "id": "7d741c57-54f5-49ff-b97e-03cc2cfd9820",
+        "firstname": "Frank",
+        "lastname": "Anthierens"
+      }
+    },
+    {
+      "id": "179",
+      "jobId": "23166",
+      "name": "Sales event",
+      "dateBuildStart": "2023-06-07",
+      "dateBuildEnd": "2023-06-07",
+      "dateStart": "2023-06-08",
+      "dateEnd": "2023-06-19",
+      "status": "Closed",
+      "partner": {
+        "id": "1b010ea4-eb8e-4258-a7ec-38b9e233326f",
+        "firstname": "Alex",
+        "lastname": "Cautaerts"
+      }
+    },
+    {
+      "id": "291",
+      "jobId": "23001A",
+      "name": "Bal et Resto National",
+      "dateBuildStart": "2023-07-16",
+      "dateBuildEnd": "2023-07-16",
+      "dateStart": "2023-07-20",
+      "dateEnd": "2023-07-22",
+      "status": "Production",
+      "partner": {
+        "id": "1b010ea4-eb8e-4258-a7ec-38b9e233326f",
+        "firstname": "Alex",
+        "lastname": "Cautaerts"
+      }
+    },
+    {
+      "id": "112",
+      "jobId": "24039",
+      "name": "Dealermeeting",
+      "dateBuildStart": "2023-12-19",
+      "dateBuildEnd": "2023-12-19",
+      "dateStart": "2023-12-20",
+      "dateEnd": "2023-12-22",
+      "status": "Production",
+      "partner": {
+        "id": "06dfac88-6bab-4dcc-8bf8-68bd74e22b74",
+        "firstname": "Stefan",
+        "lastname": "Ponnet"
+      }
+    },
+    {
+      "id": "182",
+      "jobId": "23163",
+      "name": "On Air 2023",
+      "dateBuildStart": "2023-06-15",
+      "dateBuildEnd": "2023-06-15",
+      "dateStart": "2023-06-16",
+      "dateEnd": "2023-06-18",
+      "status": "Production",
+      "partner": {
+        "id": "8fa04172-100d-4fe2-a5c8-bf842cdf38be",
+        "firstname": "Nathalie",
+        "lastname": "Schoonheyt"
+      }
+    },
+    {
+      "id": "276",
+      "jobId": "23002A",
+      "name": "Fête Nationale 2023",
+      "dateBuildStart": "2023-07-12",
+      "dateBuildEnd": "2023-07-12",
+      "dateStart": "2023-07-21",
+      "dateEnd": "2023-07-24",
+      "status": "Production",
+      "partner": {
+        "id": "1b010ea4-eb8e-4258-a7ec-38b9e233326f",
+        "firstname": "Alex",
+        "lastname": "Cautaerts"
+      }
+    },
+    {
+      "id": "158",
+      "jobId": "24026",
+      "name": "European Energy Policy Conference",
+      "dateBuildStart": "2023-09-06",
+      "dateBuildEnd": "2023-09-06",
+      "dateStart": "2023-08-07",
+      "dateEnd": "2023-09-07",
+      "status": "Production",
+      "partner": {
+        "id": "8fa04172-100d-4fe2-a5c8-bf842cdf38be",
+        "firstname": "Nathalie",
+        "lastname": "Schoonheyt"
+      }
+    },
+    {
+      "id": "203",
+      "jobId": "24004/4",
+      "name": "YTIA 2023 - 4",
+      "dateBuildStart": "2023-11-08",
+      "dateBuildEnd": "2023-11-09",
+      "dateStart": "2023-11-07",
+      "dateEnd": "2023-11-09",
+      "status": "Production",
+      "partner": {
+        "id": "8fa04172-100d-4fe2-a5c8-bf842cdf38be",
+        "firstname": "Nathalie",
+        "lastname": "Schoonheyt"
+      }
+    },
+    {
+      "id": "271",
+      "jobId": "23096",
+      "name": "Showcase 2023",
+      "dateBuildStart": "2023-06-19",
+      "dateBuildEnd": "2023-06-19",
+      "dateStart": "2023-06-22",
+      "dateEnd": "2023-06-22",
+      "status": "Closed",
+      "partner": {
+        "id": "3f95c65d-7182-4339-a340-fa3f8def6b39",
+        "firstname": "Philippe",
+        "lastname": "Malfroot"
+      }
+    },
+    {
+      "id": "96",
+      "jobId": "24050",
+      "name": "Marketing All Hands meeting",
+      "dateBuildStart": "2023-08-20",
+      "dateBuildEnd": "2023-08-20",
+      "dateStart": "2023-08-22",
+      "dateEnd": "2023-08-22",
+      "status": "Production",
+      "partner": {
+        "id": "1b010ea4-eb8e-4258-a7ec-38b9e233326f",
+        "firstname": "Alex",
+        "lastname": "Cautaerts"
+      }
+    },
+    {
+      "id": "164",
+      "jobId": "24021",
+      "name": "ONE Ingram Lux",
+      "dateBuildStart": "2023-12-06",
+      "dateBuildEnd": null,
+      "dateStart": "2023-12-07",
+      "dateEnd": "2023-12-07",
+      "status": "Production",
+      "partner": {
+        "id": "3f95c65d-7182-4339-a340-fa3f8def6b39",
+        "firstname": "Philippe",
+        "lastname": "Malfroot"
+      }
+    },
+    {
+      "id": "116",
+      "jobId": "24045",
+      "name": "Musical Swings B5Q5",
+      "dateBuildStart": "2023-07-31",
+      "dateBuildEnd": "2023-07-31",
+      "dateStart": "2023-08-01",
+      "dateEnd": "2023-08-01",
+      "status": "Production",
+      "partner": {
+        "id": "1b010ea4-eb8e-4258-a7ec-38b9e233326f",
+        "firstname": "Alex",
+        "lastname": "Cautaerts"
+      }
+    },
+    {
+      "id": "171",
+      "jobId": "24019",
+      "name": "PAC Senior leadership meeting",
+      "dateBuildStart": "2023-07-03",
+      "dateBuildEnd": "2023-07-03",
+      "dateStart": "2023-07-04",
+      "dateEnd": "2023-07-04",
+      "status": "Production",
+      "partner": {
+        "id": "1b010ea4-eb8e-4258-a7ec-38b9e233326f",
+        "firstname": "Alex",
+        "lastname": "Cautaerts"
+      }
+    },
+    {
+      "id": "244",
+      "jobId": "24009",
+      "name": "Council of Presidents + Gala dinner",
+      "dateBuildStart": "2023-11-23",
+      "dateBuildEnd": "2023-11-23",
+      "dateStart": "2023-11-24",
+      "dateEnd": "2023-11-24",
+      "status": "Production",
+      "partner": {
+        "id": "7d741c57-54f5-49ff-b97e-03cc2cfd9820",
+        "firstname": "Frank",
+        "lastname": "Anthierens"
+      }
+    },
+    {
+      "id": "102",
+      "jobId": "23201",
+      "name": "Stand VVSG",
+      "dateBuildStart": "2023-06-01",
+      "dateBuildEnd": "2023-06-01",
+      "dateStart": "2023-06-01",
+      "dateEnd": "2023-06-01",
+      "status": "Closed",
+      "partner": {
+        "id": "06dfac88-6bab-4dcc-8bf8-68bd74e22b74",
+        "firstname": "Stefan",
+        "lastname": "Ponnet"
+      }
+    },
+    {
+      "id": "176",
+      "jobId": "24020",
+      "name": "Emea meeting/Dinner Brugge",
+      "dateBuildStart": "2023-07-09",
+      "dateBuildEnd": "2023-07-09",
+      "dateStart": "2023-07-11",
+      "dateEnd": "2023-07-11",
+      "status": "Production",
+      "partner": {
+        "id": "1b010ea4-eb8e-4258-a7ec-38b9e233326f",
+        "firstname": "Alex",
+        "lastname": "Cautaerts"
+      }
+    },
+    {
+      "id": "209",
+      "jobId": "24004/5",
+      "name": "YTIA 2023 - XXL",
+      "dateBuildStart": "2023-11-12",
+      "dateBuildEnd": null,
+      "dateStart": "2023-11-13",
+      "dateEnd": "2023-11-13",
+      "status": "Production",
+      "partner": {
+        "id": "8fa04172-100d-4fe2-a5c8-bf842cdf38be",
+        "firstname": "Nathalie",
+        "lastname": "Schoonheyt"
+      }
+    },
+    {
+      "id": "318",
+      "jobId": "23129",
+      "name": "DIGathering",
+      "dateBuildStart": "2023-06-19",
+      "dateBuildEnd": "2023-06-19",
+      "dateStart": "2023-06-21",
+      "dateEnd": "2023-06-21",
+      "status": "Production",
+      "partner": {
+        "id": "1b010ea4-eb8e-4258-a7ec-38b9e233326f",
+        "firstname": "Alex",
+        "lastname": "Cautaerts"
+      }
+    },
+    {
+      "id": "104",
+      "jobId": "23199",
+      "name": "Townhall",
+      "dateBuildStart": "2023-06-15",
+      "dateBuildEnd": "2023-06-15",
+      "dateStart": "2023-06-16",
+      "dateEnd": "2023-06-16",
+      "status": "Cancelled",
+      "partner": {
+        "id": "1b010ea4-eb8e-4258-a7ec-38b9e233326f",
+        "firstname": "Alex",
+        "lastname": "Cautaerts"
+      }
+    },
+    {
+      "id": "197",
+      "jobId": "24013",
+      "name": "Management Meeting",
+      "dateBuildStart": "2023-11-29",
+      "dateBuildEnd": "2023-11-29",
+      "dateStart": "2023-11-30",
+      "dateEnd": "2023-11-30",
+      "status": "Production",
+      "partner": {
+        "id": "8fa04172-100d-4fe2-a5c8-bf842cdf38be",
+        "firstname": "Nathalie",
+        "lastname": "Schoonheyt"
+      }
+    },
+    {
+      "id": "289",
+      "jobId": "23103",
+      "name": "Power Summit 2023            ",
+      "dateBuildStart": null,
+      "dateBuildEnd": "2023-06-18",
+      "dateStart": "2023-06-20",
+      "dateEnd": "2023-06-20",
+      "status": "Production",
+      "partner": {
+        "id": "06dfac88-6bab-4dcc-8bf8-68bd74e22b74",
+        "firstname": "Stefan",
+        "lastname": "Ponnet"
+      }
+    },
+    {
+      "id": "105",
+      "jobId": "24044",
+      "name": "Fête du personnel",
+      "dateBuildStart": "2023-12-08",
+      "dateBuildEnd": "2023-12-08",
+      "dateStart": "2023-12-09",
+      "dateEnd": "2023-12-09",
+      "status": "Production",
+      "partner": {
+        "id": "3f95c65d-7182-4339-a340-fa3f8def6b39",
+        "firstname": "Philippe",
+        "lastname": "Malfroot"
+      }
+    },
+    {
+      "id": "125",
+      "jobId": "23195",
+      "name": "Stand",
+      "dateBuildStart": "2023-06-24",
+      "dateBuildEnd": "2023-06-24",
+      "dateStart": "2023-06-26",
+      "dateEnd": "2023-06-26",
+      "status": "Production",
+      "partner": {
+        "id": "1b010ea4-eb8e-4258-a7ec-38b9e233326f",
+        "firstname": "Alex",
+        "lastname": "Cautaerts"
+      }
+    },
+    {
+      "id": "152",
+      "jobId": "23181",
+      "name": "Family Day",
+      "dateBuildStart": "2023-06-02",
+      "dateBuildEnd": "2023-06-02",
+      "dateStart": "2023-06-03",
+      "dateEnd": "2023-06-03",
+      "status": "Production",
+      "partner": {
+        "id": "1b010ea4-eb8e-4258-a7ec-38b9e233326f",
+        "firstname": "Alex",
+        "lastname": "Cautaerts"
+      }
+    },
+    {
+      "id": "229",
+      "jobId": "24012",
+      "name": "Juice Summit 2023",
+      "dateBuildStart": "2023-10-03",
+      "dateBuildEnd": "2023-10-03",
+      "dateStart": "2023-10-02",
+      "dateEnd": "2023-10-04",
+      "status": "Production",
+      "partner": {
+        "id": "1b010ea4-eb8e-4258-a7ec-38b9e233326f",
+        "firstname": "Alex",
+        "lastname": "Cautaerts"
+      }
+    },
+    {
+      "id": "262",
+      "jobId": "23117",
+      "name": "BC-Techdays",
+      "dateBuildStart": "2023-06-19",
+      "dateBuildEnd": "2023-06-19",
+      "dateStart": "2023-06-20",
+      "dateEnd": "2023-06-20",
+      "status": "Production",
+      "partner": {
+        "id": "3f95c65d-7182-4339-a340-fa3f8def6b39",
+        "firstname": "Philippe",
+        "lastname": "Malfroot"
+      }
+    },
+    {
+      "id": "481",
+      "jobId": "24004",
+      "name": "YTIA 2023 - 1",
+      "dateBuildStart": "2023-10-18",
+      "dateBuildEnd": "2023-10-18",
+      "dateStart": "2023-10-19",
+      "dateEnd": "2023-10-19",
+      "status": "Production",
+      "partner": {
+        "id": "8fa04172-100d-4fe2-a5c8-bf842cdf38be",
+        "firstname": "Nathalie",
+        "lastname": "Schoonheyt"
+      }
+    },
+    {
+      "id": "543",
+      "jobId": "24002",
+      "name": "Climate Conference",
+      "dateBuildStart": "2023-10-08",
+      "dateBuildEnd": "2023-10-08",
+      "dateStart": "2023-10-06",
+      "dateEnd": "2023-10-12",
+      "status": "Production",
+      "partner": {
+        "id": "8fa04172-100d-4fe2-a5c8-bf842cdf38be",
+        "firstname": "Nathalie",
+        "lastname": "Schoonheyt"
+      }
+    },
+    {
+      "id": "107",
+      "jobId": "24036/2",
+      "name": "Portes ouvertes",
+      "dateBuildStart": "2023-10-13",
+      "dateBuildEnd": "2023-10-14",
+      "dateStart": "2023-10-12",
+      "dateEnd": "2023-10-14",
+      "status": "Production",
+      "partner": {
+        "id": "3f95c65d-7182-4339-a340-fa3f8def6b39",
+        "firstname": "Philippe",
+        "lastname": "Malfroot"
+      }
+    }
+  ],
+  "partners": [
+    {
+      "id": "06dfac88-6bab-4dcc-8bf8-68bd74e22b74",
+      "firstname": "Stefan",
+      "lastname": "Ponnet"
+    },
+    {
+      "id": "8fa04172-100d-4fe2-a5c8-bf842cdf38be",
+      "firstname": "Nathalie",
+      "lastname": "Schoonheyt"
+    },
+    {
+      "id": "7d741c57-54f5-49ff-b97e-03cc2cfd9820",
+      "firstname": "Frank",
+      "lastname": "Anthierens"
+    },
+    {
+      "id": "3f95c65d-7182-4339-a340-fa3f8def6b39",
+      "firstname": "Philippe",
+      "lastname": "Malfroot"
+    },
+    {
+      "id": "1b010ea4-eb8e-4258-a7ec-38b9e233326f",
+      "firstname": "Alex",
+      "lastname": "Cautaerts"
+    },
+    {
+      "id": "b0b2b4a0-4b9a-4b9e-8b9a-4b9a4b9e8b9a",
+      "firstname": "Bart",
+      "lastname": "Van den Brande"
+    },
+    {
+      "id": "009d04b6-15ea-4211-849c-c0c15b85a5c8",
+      "firstname": "John",
+      "lastname": "Doe"
+    },
+    {
+      "id": "510313ac-87fc-49b3-9810-e3626128928d",
+      "firstname": "Victor",
+      "lastname": "Postel"
+    }
+  ]
+}
