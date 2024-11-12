@@ -24,7 +24,7 @@ function getStyles(name, personName, theme) {
             : theme.typography.fontWeightRegular,
     }
 }
-
+//testing
 const PartnersSelect = () => {
     const { data: partners } = useGetPartnersQuery()
 
