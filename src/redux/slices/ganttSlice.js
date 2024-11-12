@@ -8,7 +8,7 @@ const extendedApi = api.injectEndpoints({
             transformResponse: (response) => {
                 return response
             },
-            providesTags: [TAGS.ganttEvents],
+            invalidatesTags: [TAGS.ganttEvents],
         }),
     }),
 })

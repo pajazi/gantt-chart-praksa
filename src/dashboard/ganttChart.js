@@ -26,6 +26,6 @@ const GanttChart = () => {
 
     console.log('Mapped tasks:', tasks) //nekad je undefined nekad je ok
 
-    //return <Gantt tasks={tasks} />
+    // return <Gantt tasks={tasks} />
 }
 export default GanttChart

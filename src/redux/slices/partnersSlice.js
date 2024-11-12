@@ -8,7 +8,7 @@ const partnerSlice = api.injectEndpoints({
             transformResponse: (response) => {
                 return response
             },
-            providesTags: [TAGS.ganttPartners],
+            invalidatesTags: [TAGS.ganttPartners],
         }),
     }),
 })
