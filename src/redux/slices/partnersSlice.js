@@ -1,4 +1,5 @@
 import { api } from '../apiSlice'
+import TAGS from '../cacheTags'
 
 const partnerSlice = api.injectEndpoints({
     endpoints: (build) => ({
@@ -7,6 +8,7 @@ const partnerSlice = api.injectEndpoints({
             transformResponse: (response) => {
                 return response
             },
+            providesTags: [TAGS.ganttPartners],
         }),
     }),
 })

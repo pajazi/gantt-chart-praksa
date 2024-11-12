@@ -24,11 +24,10 @@ function getStyles(name, personName, theme) {
             : theme.typography.fontWeightRegular,
     }
 }
-//testing
-//tetsing2
+
 const PartnersSelect = () => {
     const { data: partners } = useGetPartnersQuery()
-
+    console.log(partners)
     const theme = useTheme()
     const [personName, setPersonName] = useState('')
 
