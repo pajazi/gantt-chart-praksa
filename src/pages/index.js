@@ -1,5 +1,7 @@
 import { useGetGanttEventsQuery } from '@/redux/slices/ganttSlice'
-import FilterBar from '../components/filterBar.js'
+import FilterBar from '../dashboard/filterBar.js'
+//import GanttChart from '../dashboard/ganttChart.js'
+import MyGanttChart from '../dashboard/myGanttChart.js'
 export default function Home() {
     const { isFetching: isFetchingEvents } = useGetGanttEventsQuery()
 
@@ -7,7 +9,8 @@ export default function Home() {
 
     return (
         <>
-            <FilterBar></FilterBar>
+            <FilterBar />
+            <MyGanttChart />
         </>
     )
 }

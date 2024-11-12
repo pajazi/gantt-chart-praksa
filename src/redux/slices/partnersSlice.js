@@ -5,7 +5,6 @@ const partnerSlice = api.injectEndpoints({
         getPartners: build.query({
             query: () => 'partners',
             transformResponse: (response) => {
-                console.log(response)
                 return response
             },
         }),
