@@ -25,6 +25,7 @@ function getStyles(name, personName, theme) {
     }
 }
 //testing
+//tetsing2
 const PartnersSelect = () => {
     const { data: partners } = useGetPartnersQuery()
 
