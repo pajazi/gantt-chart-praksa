@@ -26,8 +26,8 @@ function getStyles(name, personName, theme) {
 }
 
 const PartnersSelect = () => {
-    const { data: partners } = useGetPartnersQuery()
-    console.log(partners)
+    const { data } = useGetPartnersQuery()
+    console.log('Partners: ', data)
     const theme = useTheme()
     const [personName, setPersonName] = useState('')
 
@@ -38,6 +38,7 @@ const PartnersSelect = () => {
         <FormControl sx={{ m: 1, width: 300 }}>
             <InputLabel id="demo-multiple-name-label">Select a Partner</InputLabel>
             <Select
+                sx={{ height: '50px' }}
                 labelId="demo-multiple-name-label"
                 id="demo-multiple-name"
                 value={personName}
@@ -45,8 +46,8 @@ const PartnersSelect = () => {
                 input={<OutlinedInput label="Name" />}
                 MenuProps={MenuProps}
             >
-                {partners &&
-                    partners.map((p) => (
+                {data &&
+                    data.map((p) => (
                         <MenuItem
                             key={p.id}
                             value={p.firstname}

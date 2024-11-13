@@ -3,7 +3,6 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 100%;
-    height: 5rem;
-    /* background-color: blueviolet; */
+    gap: 20px;
+    
 }

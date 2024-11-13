@@ -4,10 +4,14 @@ import TAGS from '../cacheTags'
 const partnerSlice = api.injectEndpoints({
     endpoints: (build) => ({
         getPartners: build.query({
-            query: () => 'partners',
-            transformResponse: (response) => {
-                return response
-            },
+            query: (params) => ({
+                url: `partners/`,
+                params,
+            }),
+            // query: () => 'partners',
+            // transformResponse: (response) => {
+            //     return response
+            // },
             invalidatesTags: [TAGS.ganttPartners],
         }),
     }),

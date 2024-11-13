@@ -4,13 +4,13 @@ import { useGetGanttEventsQuery } from '@/redux/slices/ganttSlice'
 import { useState, useEffect } from 'react'
 const GanttChart = () => {
     const [tasks, setTasks] = useState([])
-    const { data: events } = useGetGanttEventsQuery()
+    const { data } = useGetGanttEventsQuery()
 
-    console.log(events)
+    console.log(data)
 
     const array =
-        events &&
-        events.map((ev) => ({
+        data &&
+        data.map((ev) => ({
             name: ev.name,
             id: ev.id,
             start: ev.dateStart ? new Date(ev.dateStart) : null,
@@ -18,14 +18,14 @@ const GanttChart = () => {
             type: ev.status,
             progress: 100,
             isDisabled: true,
-            styles: { progressColor: '#ffbb54' },
+            styles: { progressColor: '#e30f7a' },
         }))
     useEffect(() => {
         setTasks(array)
-    }, [events])
+    }, [data])
 
     console.log('Mapped tasks:', tasks) //nekad je undefined nekad je ok
 
-    // return <Gantt tasks={tasks} />
+    return <Gantt tasks={tasks} />
 }
 export default GanttChart

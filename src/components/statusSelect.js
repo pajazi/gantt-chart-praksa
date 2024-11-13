@@ -21,6 +21,7 @@ const StatusSelect = () => {
         <FormControl sx={{ m: 1, width: 300 }}>
             <InputLabel id="demo-multiple-name-label">Select a Status</InputLabel>
             <Select
+                sx={{ height: '50px' }}
                 labelId="demo-multiple-name-label"
                 id="demo-multiple-name"
                 value={statusValue}
