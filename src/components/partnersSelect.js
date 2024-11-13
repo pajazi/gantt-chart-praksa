@@ -25,14 +25,16 @@ function getStyles(name, personName, theme) {
     }
 }
 
-const PartnersSelect = () => {
+const PartnersSelect = ({ onPartnerChange }) => {
     const { data } = useGetPartnersQuery()
     console.log('Partners: ', data)
     const theme = useTheme()
     const [personName, setPersonName] = useState('')
-
-    const handleChange = (event) => {
-        setPersonName(event.target.value)
+    const [partner, passPartner] = useState('')
+    const handleChange = (e) => {
+        setPersonName(e.target.value)
+        passPartner(e.target.value)
+        onPartnerChange(e.target.value)
     }
     return (
         <FormControl sx={{ m: 1, width: 300 }}>
@@ -48,11 +50,7 @@ const PartnersSelect = () => {
             >
                 {data &&
                     data.map((p) => (
-                        <MenuItem
-                            key={p.id}
-                            value={p.firstname}
-                            style={getStyles(p, personName, theme)}
-                        >
+                        <MenuItem key={p.id} value={p.firstname} style={getStyles(p, personName, theme)}>
                             {p.firstname} {p.lastname}
                         </MenuItem>
                     ))}

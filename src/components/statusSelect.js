@@ -11,12 +11,15 @@ const data = [
     { id: 3, value: 'Offer' },
     { id: 4, value: 'Cancelled' },
 ]
-const StatusSelect = () => {
+const StatusSelect = ({ onStatusChange }) => {
     const [statusValue, setStatus] = useState('')
-
-    const handleChange = (event) => {
-        setStatus(event.target.value)
+    const [stat, passStatus] = useState('')
+    const handleChange = (e) => {
+        setStatus(e.target.value)
+        passStatus(e.target.value)
+        onStatusChange(e.target.value)
     }
+    console.log(stat)
     return (
         <FormControl sx={{ m: 1, width: 300 }}>
             <InputLabel id="demo-multiple-name-label">Select a Status</InputLabel>

@@ -4,9 +4,10 @@ import StatusSelect from '../components/statusSelect'
 import ClearFilters from '../components/ClearFilters'
 import styles from './filterBar.module.css'
 const FilterBar = () => {
+    
     return (
         <div className={styles.container}>
-            <StatusSelect />
+            <StatusSelect  />
             <PartnersSelect />
             <RangePicker />
             <ClearFilters />
