@@ -27,7 +27,6 @@ function getStyles(name, personName, theme) {
 
 const PartnersSelect = ({ onPartnerChange }) => {
     const { data } = useGetPartnersQuery()
-    console.log('Partners: ', data)
     const theme = useTheme()
     const [personName, setPersonName] = useState('')
     const [partner, passPartner] = useState('')
@@ -50,7 +49,7 @@ const PartnersSelect = ({ onPartnerChange }) => {
             >
                 {data &&
                     data.map((p) => (
-                        <MenuItem key={p.id} value={p.firstname} style={getStyles(p, personName, theme)}>
+                        <MenuItem key={p.id} value={p.id} style={getStyles(p, personName, theme)}>
                             {p.firstname} {p.lastname}
                         </MenuItem>
                     ))}

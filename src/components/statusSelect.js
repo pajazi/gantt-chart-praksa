@@ -19,7 +19,7 @@ const StatusSelect = ({ onStatusChange }) => {
         passStatus(e.target.value)
         onStatusChange(e.target.value)
     }
-    console.log(stat)
+
     return (
         <FormControl sx={{ m: 1, width: 300 }}>
             <InputLabel id="demo-multiple-name-label">Select a Status</InputLabel>
