@@ -4,13 +4,12 @@ import TextField from '@mui/material/TextField'
 import Dialog from '@mui/material/Dialog'
 import DialogActions from '@mui/material/DialogActions'
 import DialogContent from '@mui/material/DialogContent'
-import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
 
 const ModalEvent = ({ open, handleClose, idEv }) => {
-    console.log(idEv)
+    
     return (
-        <div>
+        <form>
             <Dialog
                 open={open}
                 onClose={handleClose}
@@ -38,7 +37,7 @@ const ModalEvent = ({ open, handleClose, idEv }) => {
                         variant="outlined"
                         value={idEv.name.split(' ')[0]}
                         fullWidth
-                    />
+                    ></TextField>
                     <TextField
                         id="outlined-basic"
                         label="Status"
@@ -70,12 +69,13 @@ const ModalEvent = ({ open, handleClose, idEv }) => {
                             textTransform: 'none',
                             maxHeight: '40px',
                         }}
+                        type="submit"
                     >
                         Save
                     </Button>
                 </DialogActions>
             </Dialog>
-        </div>
+        </form>
     )
 }
 export default ModalEvent

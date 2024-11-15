@@ -2,8 +2,9 @@ import { Gantt } from 'gantt-task-react'
 import 'gantt-task-react/dist/index.css'
 import { useGetGanttEventsQuery } from '@/redux/slices/ganttSlice'
 import { useEffect, useMemo, useState } from 'react'
-import './filterBar.module.css'
-import ModalEvent from '../components/ModalEvent'
+import styles from './filterBar.module.css'
+import ModalEvent from '../components/modal/ModalEvent'
+
 const GanttChart = ({ stat, partner, dateRange }) => {
     const [tasksStat, setTaskStatsus] = useState([])
     const [tasksPart, setTaskPartners] = useState([])
@@ -11,7 +12,7 @@ const GanttChart = ({ stat, partner, dateRange }) => {
     const [dateR, setTaskDate] = useState([])
     const [modal, showModal] = useState(false)
     const [id, setID] = useState('')
-
+    console.log('From index', dateRange)
     const { data: events, isLoading, isError, error } = useGetGanttEventsQuery()
 
     const tasks = useMemo(() => {
@@ -29,7 +30,7 @@ const GanttChart = ({ stat, partner, dateRange }) => {
             })) || []
         )
     }, [events])
-    console.log('Tasks', tasks)
+
     const tasksBuild = useMemo(() => {
         return (
             events?.map((ev) => ({
@@ -61,39 +62,32 @@ const GanttChart = ({ stat, partner, dateRange }) => {
         setID(id)
         console.log(modal)
     }
-    useEffect(() => {
-        if (!isLoading && !isError) {
-            const taskStatus = tasks.filter((at) => at.type == stat)
-            setTaskStatsus(taskStatus)
-        }
-    }, [tasks, stat, isLoading, isError, events])
 
     useEffect(() => {
         if (!isLoading && !isError) {
-            const taskPartner = tasks.filter((ev) => ev.idPartner.split(',')[0] == partner)
-            setTaskPartners(taskPartner)
-        }
-    }, [partner, isLoading, isError, tasks])
-
-    useEffect(() => {
-        if (!isLoading && !isError) {
-            const taskPartnerAndStatus = tasks.filter(
-                (ev) => ev.idPartner.split(',')[0] == partner && ev.type == stat,
+            const filteredTasks = tasks.filter((task) => {
+                const matchedStatus = stat ? task.type == stat : true
+                const matchedPartner = partner ? task.idPartner.split(',')[0] == partner : true
+                const machedDate = dateRange
+                    ? task.start == dateRange.from || task.end == dateRange.to
+                    : true
+                return matchedStatus && matchedPartner
+            })
+            setTaskStatsus(filteredTasks.filter((task) => task.type == stat))
+            setTaskPartners(filteredTasks.filter((task) => task.idPartner.split(',')[0] == partner))
+            setTaskPartnersAndStatus(
+                filteredTasks.filter(
+                    (task) => task.idPartner.split(',')[0] == partner && task.type == stat,
+                ),
             )
-            setTaskPartnersAndStatus(taskPartnerAndStatus)
-        }
-    }, [partner, stat, isLoading, isError, tasks])
-
-    useEffect(() => {
-        if (!isLoading && !isError) {
-            const taskDate = tasks.filter(
-                (at) => at.start == dateRange.from || at.end == dateRange.to,
+            setTaskDate(
+                filteredTasks.filter(
+                    (task) => task.start == dateRange.from || task.end == dateRange.to,
+                ),
             )
-            setTaskDate(taskDate)
         }
-    }, [tasks, dateRange, isLoading, isError, events])
-    console.log('New tasks range', dateR)
-
+    }, [tasks, stat, partner, isLoading, isError])
+    console.log(dateR)
     if (isLoading) {
         return <div>Loading...</div>
     }
@@ -104,8 +98,14 @@ const GanttChart = ({ stat, partner, dateRange }) => {
 
     return (
         <div>
-            {tasksStat.length === 0 && tasksPart.length === 0 && partAndStat.length === 0 ? (
+            {tasksStat.length === 0 &&
+            tasksPart.length === 0 &&
+            partAndStat.length === 0 &&
+            !stat &&
+            !partner ? (
                 <Gantt tasks={allTasks} onClick={onDblClick} />
+            ) : tasksStat.length === 0 && tasksPart.length === 0 && partAndStat.length === 0 ? (
+                <div className={styles.noMatch}> ⚠ No match found</div>
             ) : (
                 <>
                     {tasksStat.length > 0 && !tasksPart.length > 0 && (
