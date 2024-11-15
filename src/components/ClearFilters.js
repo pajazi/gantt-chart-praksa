@@ -1,15 +1,11 @@
 import Button from '@mui/material/Button'
 
-const ClearFilters = () => {
-    const handleRefresh = () => {
-      
-        window.location.reload()
-    }
+const ClearFilters = ({ onChange }) => {
     return (
         <Button
             sx={{ background: '#e30f7a', color: 'white', textTransform: 'none', maxHeight: '40px' }}
             disableRipple
-            onClick={handleRefresh}
+            onClick={onChange}
         >
             Clear filters
         </Button>

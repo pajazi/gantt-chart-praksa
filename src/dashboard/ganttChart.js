@@ -4,11 +4,13 @@ import { useGetGanttEventsQuery } from '@/redux/slices/ganttSlice'
 import { useEffect, useMemo, useState } from 'react'
 import './filterBar.module.css'
 import ModalEvent from '../components/ModalEvent'
-const GanttChart = ({ stat, partner }) => {
+const GanttChart = ({ stat, partner, dateRange }) => {
     const [tasksStat, setTaskStatsus] = useState([])
     const [tasksPart, setTaskPartners] = useState([])
     const [partAndStat, setTaskPartnersAndStatus] = useState([])
+    const [dateR, setTaskDate] = useState([])
     const [modal, showModal] = useState(false)
+    const [id, setID] = useState('')
 
     const { data: events, isLoading, isError, error } = useGetGanttEventsQuery()
 
@@ -19,7 +21,7 @@ const GanttChart = ({ stat, partner }) => {
                 end: new Date(ev.dateEnd),
                 name: `${ev.name} (${ev.status}) `,
                 id: ev.id,
-                idPartner: ev.partner.id,
+                idPartner: `${ev.partner.id},${ev.partner.firstname},${ev.partner.lastname}`,
                 type: ev.status,
                 progress: 100,
                 isDisabled: true,
@@ -27,7 +29,7 @@ const GanttChart = ({ stat, partner }) => {
             })) || []
         )
     }, [events])
-
+    console.log('Tasks', tasks)
     const tasksBuild = useMemo(() => {
         return (
             events?.map((ev) => ({
@@ -35,7 +37,7 @@ const GanttChart = ({ stat, partner }) => {
                 end: new Date(ev.dateBuildEnd),
                 name: `${ev.name} (Build) `,
                 id: ev.id + 1000,
-                idPartner: ev.partner.id + 100,
+                idPartner: `${ev.partner.id},${ev.partner.firstname},${ev.partner.lastname}`,
                 type: ev.status,
                 progress: 100,
                 isDisabled: true,
@@ -54,8 +56,9 @@ const GanttChart = ({ stat, partner }) => {
         return combined
     }, [tasks, tasksBuild])
 
-    const onDblClick = () => {
+    const onDblClick = (id) => {
         showModal(true)
+        setID(id)
         console.log(modal)
     }
     useEffect(() => {
@@ -67,7 +70,7 @@ const GanttChart = ({ stat, partner }) => {
 
     useEffect(() => {
         if (!isLoading && !isError) {
-            const taskPartner = tasks.filter((ev) => ev.idPartner == partner)
+            const taskPartner = tasks.filter((ev) => ev.idPartner.split(',')[0] == partner)
             setTaskPartners(taskPartner)
         }
     }, [partner, isLoading, isError, tasks])
@@ -75,11 +78,21 @@ const GanttChart = ({ stat, partner }) => {
     useEffect(() => {
         if (!isLoading && !isError) {
             const taskPartnerAndStatus = tasks.filter(
-                (ev) => ev.idPartner == partner && ev.type == stat,
+                (ev) => ev.idPartner.split(',')[0] == partner && ev.type == stat,
             )
             setTaskPartnersAndStatus(taskPartnerAndStatus)
         }
     }, [partner, stat, isLoading, isError, tasks])
+
+    useEffect(() => {
+        if (!isLoading && !isError) {
+            const taskDate = tasks.filter(
+                (at) => at.start == dateRange.from || at.end == dateRange.to,
+            )
+            setTaskDate(taskDate)
+        }
+    }, [tasks, dateRange, isLoading, isError, events])
+    console.log('New tasks range', dateR)
 
     if (isLoading) {
         return <div>Loading...</div>
@@ -104,7 +117,7 @@ const GanttChart = ({ stat, partner }) => {
                     {partAndStat.length > 0 && <Gantt tasks={partAndStat} onClick={onDblClick} />}
                 </>
             )}
-            {modal && <ModalEvent open={modal} handleClose={() => showModal(false)} />}
+            {modal && <ModalEvent open={modal} handleClose={() => showModal(false)} idEv={id} />}
         </div>
     )
 }

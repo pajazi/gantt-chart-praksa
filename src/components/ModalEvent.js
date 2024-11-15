@@ -7,8 +7,8 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
 
-const ModalEvent = ({ open, handleClose, id }) => {
-    console.log(id)
+const ModalEvent = ({ open, handleClose, idEv }) => {
+    console.log(idEv)
     return (
         <div>
             <Dialog
@@ -32,10 +32,34 @@ const ModalEvent = ({ open, handleClose, id }) => {
                         width: '500px',
                     }}
                 >
-                    <TextField id="outlined-basic" label="Name" variant="outlined" fullWidth />
-                    <TextField id="outlined-basic" label="Status" variant="outlined" fullWidth />
-                    <TextField id="outlined-basic" label="Partner Name" variant="outlined" fullWidth />
-                    <TextField id="outlined-basic" label="Partner Last Name" variant="outlined" fullWidth />
+                    <TextField
+                        id="outlined-basic"
+                        label="Name"
+                        variant="outlined"
+                        value={idEv.name.split(' ')[0]}
+                        fullWidth
+                    />
+                    <TextField
+                        id="outlined-basic"
+                        label="Status"
+                        variant="outlined"
+                        value={idEv.type}
+                        fullWidth
+                    />
+                    <TextField
+                        id="outlined-basic"
+                        label="Partner First Name"
+                        value={idEv.idPartner.split(',')[1]}
+                        variant="outlined"
+                        fullWidth
+                    />
+                    <TextField
+                        id="outlined-basic"
+                        label="Partner Last Name"
+                        value={idEv.idPartner.split(',')[2]}
+                        variant="outlined"
+                        fullWidth
+                    />
                 </DialogContent>
 
                 <DialogActions>

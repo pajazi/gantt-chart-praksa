@@ -3,7 +3,6 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
-import { useState } from 'react'
 
 const data = [
     { id: 1, value: 'Production' },
@@ -11,12 +10,8 @@ const data = [
     { id: 3, value: 'Offer' },
     { id: 4, value: 'Cancelled' },
 ]
-const StatusSelect = ({ onStatusChange }) => {
-    const [statusValue, setStatus] = useState('')
-    const [stat, passStatus] = useState('')
+const StatusSelect = ({ stat, onStatusChange }) => {
     const handleChange = (e) => {
-        setStatus(e.target.value)
-        passStatus(e.target.value)
         onStatusChange(e.target.value)
     }
 
@@ -27,7 +22,7 @@ const StatusSelect = ({ onStatusChange }) => {
                 sx={{ height: '50px' }}
                 labelId="demo-multiple-name-label"
                 id="demo-multiple-name"
-                value={statusValue}
+                value={stat}
                 onChange={handleChange}
                 input={<OutlinedInput label="Name" />}
             >

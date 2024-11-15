@@ -1,7 +1,11 @@
 import { DateRangePicker } from '@tremor/react'
-import './date.module.css'
 import { Box } from '@mui/material'
-const RangePicker = () => {
+
+const RangePicker = ({ dateR, onRangeChange }) => {
+    const handleChange = (dateRange) => {
+        onRangeChange(dateRange)
+    }
+
     return (
         <Box
             sx={{
@@ -64,7 +68,16 @@ const RangePicker = () => {
                 },
             }}
         >
-            <DateRangePicker placeholder="Select" enableSelect={false} />
+            <div className="flex flex-col items-center gap-y-4">
+                <DateRangePicker
+                    placeholder="Select"
+                    enableSelect={false}
+                    value={dateR}
+                    onValueChange={handleChange}
+                    enableYearNavigation
+                    className="w-60"
+                />
+            </div>
         </Box>
     )
 }

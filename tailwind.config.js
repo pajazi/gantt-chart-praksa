@@ -1,6 +1,12 @@
-import  { Config } from "tailwindcss";
+import { Config } from 'tailwindcss'
+
 module.exports = {
-    content: ['./src/**/*.{html,js}', './node_modules/@tremor/**/*.{js}'],
+    content: [
+        './src/**/*.{html,js}',
+        './node_modules/@tremor/**/*.{js}',
+        './pages/**/*.{js,ts,jsx,tsx}',
+        './components/**/*.{js,ts,jsx,tsx}',
+    ],
     theme: {
         extend: {
             keyframes: {
@@ -35,4 +41,4 @@ module.exports = {
         },
     },
     plugins: [],
-} 
+}
