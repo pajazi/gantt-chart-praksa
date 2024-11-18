@@ -1,0 +1,14 @@
+.container {
+    justify-content: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+}
+.noMatch {
+    text-align: center;
+    font-size: large;
+    padding-top: 200px;
+    background-color: gainsboro;
+    height: 200px;
+}
