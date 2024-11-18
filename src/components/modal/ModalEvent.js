@@ -7,7 +7,6 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogTitle from '@mui/material/DialogTitle'
 
 const ModalEvent = ({ open, handleClose, idEv }) => {
-    
     return (
         <form>
             <Dialog
@@ -22,7 +21,7 @@ const ModalEvent = ({ open, handleClose, idEv }) => {
                     },
                 }}
             >
-                <DialogTitle sx={{ height: '20px' }}>Hehe</DialogTitle>
+                <DialogTitle sx={{ height: '20px' }}>{idEv.name}</DialogTitle>
                 <DialogContent
                     sx={{
                         display: 'flex',
@@ -36,28 +35,34 @@ const ModalEvent = ({ open, handleClose, idEv }) => {
                         label="Name"
                         variant="outlined"
                         value={idEv.name.split(' ')[0]}
-                        fullWidth
                     ></TextField>
-                    <TextField
-                        id="outlined-basic"
-                        label="Status"
-                        variant="outlined"
-                        value={idEv.type}
-                        fullWidth
-                    />
+                    {idEv.type == 'Build' ? (
+                        <TextField
+                            id="outlined-basic"
+                            label="Status"
+                            variant="outlined"
+                            value="Build"
+                        />
+                    ) : (
+                        <TextField
+                            id="outlined-basic"
+                            label="Status"
+                            variant="outlined"
+                            value={idEv.type}
+                        />
+                    )}
+
                     <TextField
                         id="outlined-basic"
                         label="Partner First Name"
                         value={idEv.idPartner.split(',')[1]}
                         variant="outlined"
-                        fullWidth
                     />
                     <TextField
                         id="outlined-basic"
                         label="Partner Last Name"
                         value={idEv.idPartner.split(',')[2]}
                         variant="outlined"
-                        fullWidth
                     />
                 </DialogContent>
 
