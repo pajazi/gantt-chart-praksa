@@ -4,10 +4,6 @@ import { Provider } from 'react-redux'
 import { store } from '../redux/store'
 
 export default function App({ Component, pageProps }) {
-    // const {
-    //     store,
-    //     props: { pageProps },
-    // } = wrapper.useWrappedStore(props)
 
     return (
         <Provider store={store}>
@@ -16,4 +12,3 @@ export default function App({ Component, pageProps }) {
     )
 }
 
-//export default wrapper.withRedux(App)
