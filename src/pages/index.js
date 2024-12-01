@@ -4,12 +4,13 @@ import PartnersSelect from '../components/select/partnersSelect.js'
 import StatusSelect from '../components/select/statusSelect.js'
 import ClearFilters from '../components/ClearFilters'
 import styles from '../dashboard/filterBar.module.css'
+
 import { useState } from 'react'
 
 export default function Home() {
     const [stat, setStatus] = useState('')
     const [partner, setPartner] = useState('')
-    const [dateRange, setDateRange] = useState({ from: null, to: null })
+    const [dateRange, setDateRange] = useState('')
     const handleStatusChange = (newStat) => {
         setStatus(newStat)
     }
@@ -23,7 +24,7 @@ export default function Home() {
     const handleChange = () => {
         setStatus('')
         setPartner('')
-        setDateRange({ from: null, to: null })
+        setDateRange('')
     }
     return (
         <>

@@ -8,12 +8,9 @@ import ModalEvent from '../components/modal/ModalEvent'
 const GanttChart = ({ stat, partner, dateRange }) => {
     const [tasksStat, setTaskStatsus] = useState([])
     const [tasksPart, setTaskPartners] = useState([])
-    const [partAndStat, setTaskPartnersAndStatus] = useState([])
-    //const [dateR, setTaskDate] = useState([])
+    const [dateR, setTaskDate] = useState([])
     const [modal, showModal] = useState(false)
     const [id, setID] = useState('')
-
-    console.log('From index', dateRange)
 
     const { data: events, isLoading, isError, error } = useGetGanttEventsQuery()
 
@@ -38,8 +35,7 @@ const GanttChart = ({ stat, partner, dateRange }) => {
                 const start =
                     ev.dateBuildStart == null ? new Date('2023-06-01') : new Date(ev.dateBuildStart)
                 const end =
-                    ev.dateBuildEnd == null ? new Date('2023-06-01') : new Date(ev.dateBuildEnd)
-                console.log(start)
+                    ev.dateBuildEnd == null ? new Date('2023-12-01') : new Date(ev.dateBuildEnd)
                 return {
                     start,
                     end,
@@ -69,33 +65,40 @@ const GanttChart = ({ stat, partner, dateRange }) => {
         setID(id)
         console.log(modal)
     }
-
+    const normalizeToUTC = (dateStr) => {
+        const date = new Date(dateStr)
+        date.setHours(0, 0, 0, 0)
+        return date
+    }
     useEffect(() => {
         if (!isLoading && !isError) {
             const filteredTasks = tasks.filter((task) => {
                 const matchedStatus = stat ? task.type == stat : true
                 const matchedPartner = partner ? task.idPartner.split(',')[0] == partner : true
-                // const machedDate = dateRange
-                //     ? task.start == dateRange.from || task.end == dateRange.to
-                //     : true
-                return matchedStatus && matchedPartner
+                const matchedDate = dateRange
+                    ? normalizeToUTC(task.start) >= normalizeToUTC(dateRange.from) &&
+                      normalizeToUTC(task.end) <= normalizeToUTC(dateRange.to)
+                    : true
+
+                return matchedStatus && matchedPartner && matchedDate
             })
+
             setTaskStatsus(filteredTasks.filter((task) => task.type == stat))
             setTaskPartners(filteredTasks.filter((task) => task.idPartner.split(',')[0] == partner))
-            setTaskPartnersAndStatus(
+            setTaskDate(
                 filteredTasks.filter(
-                    (task) => task.idPartner.split(',')[0] == partner && task.type == stat,
+                    (task) =>
+                        normalizeToUTC(task.start) >= normalizeToUTC(dateRange.from) &&
+                        normalizeToUTC(task.end) <= normalizeToUTC(dateRange.to),
                 ),
             )
-            // setTaskDate(
-            //     filteredTasks.filter(
-            //         (task) => task.start == dateRange.from || task.end == dateRange.to,
-            //     ),
-            // )
         }
-    }, [tasks, stat, partner, isLoading, isError])
+    }, [tasks, stat, partner, dateRange, isLoading, isError])
 
-    //console.log(dateR)
+    const filteredAll = [...tasksStat, ...tasksPart, ...dateR]
+    const finalTask = filteredAll.filter(
+        (task, index, self) => index === self.findIndex((t) => t.id === task.id),
+    )
 
     if (isLoading) {
         return <div>Loading...</div>
@@ -109,26 +112,17 @@ const GanttChart = ({ stat, partner, dateRange }) => {
         <div>
             {tasksStat.length === 0 &&
             tasksPart.length === 0 &&
-            partAndStat.length === 0 &&
+            dateR.length === 0 &&
             !stat &&
-            !partner ? (
+            !partner &&
+            !dateRange ? (
                 <Gantt tasks={allTasks} onClick={displayModal} listCellWidth={200} />
-            ) : tasksStat.length === 0 && tasksPart.length === 0 && partAndStat.length === 0 ? (
+            ) : tasksStat.length === 0 && tasksPart.length === 0 && dateR.length === 0 ? (
                 <div className={styles.noMatch}>
-                    <b>ⓘ There are no ivents from the specified criteria.</b>
+                    <b>ⓘ There are no events from the specified criteria.</b>
                 </div>
             ) : (
-                <>
-                    {tasksStat.length > 0 && !tasksPart.length > 0 && (
-                        <Gantt tasks={tasksStat} onClick={displayModal} listCellWidth={200} />
-                    )}
-                    {tasksPart.length > 0 && !tasksStat.length > 0 && (
-                        <Gantt tasks={tasksPart} onClick={displayModal} listCellWidth={200} />
-                    )}
-                    {partAndStat.length > 0 && (
-                        <Gantt tasks={partAndStat} onClick={displayModal} listCellWidth={200} />
-                    )}
-                </>
+                <>{<Gantt tasks={finalTask} onClick={displayModal} listCellWidth={200} />}</>
             )}
             {modal && <ModalEvent open={modal} handleClose={() => showModal(false)} idEv={id} />}
         </div>

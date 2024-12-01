@@ -14,6 +14,7 @@ const RangePicker = ({ dateR, onRangeChange }) => {
                     borderWidth: '0',
                     borderStyle: 'solid',
                     backgroundColor: 'white',
+                    borderRadius: '10px',
                 },
                 button: {
                     height: '40px !important',
@@ -30,7 +31,10 @@ const RangePicker = ({ dateR, onRangeChange }) => {
                     maxWidth: '40px',
                     maxHeight: '40px',
                 },
-
+                '.p-1': {
+                    border: '1px solid gray',
+                    color: 'gray',
+                },
                 '.tremor-DateRangePicker-calendarIcon': {
                     display: 'inline-block',
                     width: '40px',
@@ -54,16 +58,35 @@ const RangePicker = ({ dateR, onRangeChange }) => {
                 },
                 '.rdp': {
                     position: 'absolute',
-                    width: '200px',
+                    width: '250px',
                     textAlign: 'center',
-                    top: '150px',
-                    right: '100px',
+                    top: '70px',
+                    right: '40px',
                     zIndex: '1000',
-
+                    border: '0.5px solid gray',
+                    '.h-9': {
+                        color: 'gray',
+                    },
                     button: {
                         width: '30px',
                         position: 'relative',
-                        backgroundColor: 'gray',
+                        borderRadius: '5px',
+                        textAlign: 'center',
+                    },
+                },
+                '.justify-between': {
+                    padding: '10px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'flex-start',
+
+                    '.space-x-1': {
+                        display: 'flex',
+                        flexDirection: 'row',
+                    },
+                    '.text-tremor-default': {
+                        margin: '15px',
+                        fontWeight: 'bold',
                     },
                 },
             }}
@@ -75,7 +98,7 @@ const RangePicker = ({ dateR, onRangeChange }) => {
                     value={dateR}
                     onValueChange={handleChange}
                     enableYearNavigation
-                    className="w-60"
+                    color="pink"
                 />
             </div>
         </Box>
